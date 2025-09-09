@@ -3,6 +3,16 @@
 Unofficial tool for downloading a dump of all of your images, collections, boards and folders from refern.
 
 
+## Caveats
+
+* While I'll try to make this documentation as accessible as I can, you still need to have a little bit of experience with using browser devtools and running Python scripts to be able to use this.
+* This tool requires login details. While it should be possible to download public boards without needing to provide login details, I haven't implemented it.
+* This tool saves your refern data in pretty much the raw form provided by the internal API.
+  Images are saved as-is, but boards and image metadata are saved as JSON files.
+  Turning these JSON files into anything human-readable e.g. a visual render of the board as displayed in refern is left as an exercise to the reader (or another keen coder).
+  I've only implemented the bare minimum needed to get your data out of the app before the servers get switched off.
+
+
 ## Installation
 
 1. Install [Python][], if you haven't already.
