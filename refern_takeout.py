@@ -63,12 +63,18 @@ def load_api_token(path):
 
 def compute_fullnames(folders, items):
   for folder_id, folder in folders.items():
-    fullname = folder["name"].replace("/", "_")
-    if folder["parentFolderId"]:
-      fullname = folders[folder["parentFolderId"]]["__fullname"] + "/" + fullname
-    folder["__fullname"] = fullname
+    folder["__fullname"] = compute_folder_fullname(folder_id, folders)
   for item in items:
     item["__fullname"] = folders[item["__parentFolderId"]]["__fullname"] + "/" + item["name"].replace("/", "_")
+
+
+def compute_folder_fullname(folder_id, folders):
+  base_name = folders[folder_id]["name"].replace("/", "_")
+  parent_id = folders[folder_id]["parentFolderId"]
+  if parent_id:
+    return compute_folder_fullname(parent_id, folders) + "/" + base_name
+  else:
+    return base_name
 
 
 def dump_boards(boards, api, output_dir):
