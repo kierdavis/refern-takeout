@@ -50,6 +50,6 @@ Unofficial tool for downloading a dump of all of your images, collections, board
 4. Your refern content will be downloaded into a new folder named `refern`, located in the same folder as the `refern_takeout.py` script.
 
 
-[Download refern-takeout]: https://TODO
+[Download refern-takeout]: https://github.com/kierdavis/refern-takeout/archive/refs/heads/main.zip
 [Python]: https://www.python.org/
 [refern-app]: https://my.refern.app/
